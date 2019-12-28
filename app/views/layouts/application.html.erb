@@ -25,10 +25,9 @@
 
         <div id="navbarContentHolder" class="navbar-menu" data-target="main-nav.menu">
           <div class="navbar-end">
-            <a class="navbar-item">Home</a>
-            <a class="navbar-item">Example</a>
+            <a class="navbar-item <%= active_route?(root_path) %>">Home</a>
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">Account</a>
+              <a class="navbar-link">Hi there, <%= current_user.first_name %>!</a>
               <div class="navbar-dropdown">
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
               </div>
