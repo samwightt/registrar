@@ -10,23 +10,25 @@
   </head>
 
   <body>
-    <section class="hero is-dark is-bold is-fullheight">
+    <section class="hero is-primary is-bold is-fullheight">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-vcentered">
             <div class="column">
-              <h1 class="title">Application Name</h1>
-              <h2 class="subtitle">Subtitle</h1>
+              <h1 class="title"><%= Rails.configuration.registrar["application_name"] %></h1>
+              <% if Rails.configuration.registrar["application_subtitle"] %>
+                <h2 class="subtitle"><%= Rails.configuration.registrar["application_subtitle"] %></h1>
+              <% end %>
             </div>
             <div class="column">
               <% if !flash.empty? %>
-                <div class="box has-background-danger">
-                  <div class="content">
-                    <% flash.each do |key, value| %>
+                <% flash.each do |key, value| %>
+                  <div class="box <%= key == "alert" ? "has-background-danger" : "has-background-primary" %>">
+                    <div class="content">
                       <p class="has-text-white"><%= value %></p>
-                    <% end %>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               <% end %>
               <%= yield %>
             </div>

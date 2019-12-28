@@ -14,7 +14,7 @@
     <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation" data-controller="main-nav">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">Application Name</a>
+          <a class="navbar-item"><%= Rails.configuration.registrar["application_name"] %></a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarContentHolder" data-action="click->main-nav#toggle">
             <span aria-hidden="true"></span>

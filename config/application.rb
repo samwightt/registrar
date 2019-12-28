@@ -19,5 +19,6 @@ module Registrar
       Devise::SessionsController.layout "authform"
       Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "authform"}
     end
+    config.registrar = config_for(:registrar)
   end
 end
