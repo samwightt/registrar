@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registrar</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <section class="hero is-dark is-bold is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <h1 class="title">Application Name</h1>
+              <h2 class="subtitle">Subtitle</h1>
+            </div>
+            <div class="column">
+              <% if !flash.empty? %>
+                <div class="box has-background-danger">
+                  <div class="content">
+                    <% flash.each do |key, value| %>
+                      <p class="has-text-white"><%= value %></p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -15,5 +15,9 @@ module Registrar
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.to_prepare do
+      Devise::SessionsController.layout "authform"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "authform"}
+    end
   end
 end
