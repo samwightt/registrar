@@ -1,7 +1,8 @@
 default: &default
   application_name: "Application Name"
   application_subtitle: "Application Subtitle"
-  authentication:
+  auth:
     sign_up_subtitle: "Create an account to register for the hackathon."
+    log_in_subtitle: "Login to register or view your application status."
 development: *default
 production: *default

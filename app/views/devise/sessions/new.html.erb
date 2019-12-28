@@ -1,5 +1,8 @@
 <div class="box">
   <h1 class="title has-text-black">Log in</h1>
+  <% if Rails.configuration.registrar.dig(:auth, :log_in_subtitle) %>
+    <h4 class="subtitle has-text-black"><%= Rails.configuration.registrar["auth"]["log_in_subtitle"] %></h4>
+  <% end %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email, class: "label" %>
