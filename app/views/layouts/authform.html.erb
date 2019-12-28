@@ -21,15 +21,7 @@
               <% end %>
             </div>
             <div class="column">
-              <% if !flash.empty? %>
-                <% flash.each do |key, value| %>
-                  <div class="box <%= key == "alert" ? "has-background-danger" : "has-background-primary" %>">
-                    <div class="content">
-                      <p class="has-text-white"><%= value %></p>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
+              <%= render "layouts/flash_handler" %>
               <%= yield %>
             </div>
           </div>
