@@ -26,6 +26,9 @@
         <div id="navbarContentHolder" class="navbar-menu" data-target="main-nav.menu">
           <div class="navbar-end">
             <a class="navbar-item <%= active_route?(root_path) %>">Home</a>
+            <% if current_user.admin? %>
+              <a class="navbar-item">Admin</a>
+            <% end %>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">Hi there, <%= current_user.first_name %>!</a>
               <div class="navbar-dropdown">
