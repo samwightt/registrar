@@ -1,0 +1,10 @@
+<h1 class="title">Editing: <%= @hackathon.name %></h1>
+<%= render partial: "hackathon_form", locals: { hackathon: @hackathon } %>
+
+<% content_for :hackathon_submenu do %>
+  <%= link_to @hackathon.name, admin_hackathon_path(@hackathon), class: 'has-text-weight-medium' %>
+  <ul>
+    <li><%= active_link_to "View", admin_hackathon_path(@hackathon), active: :exclusive, class_active: 'is-active' %></li>
+    <li><%= active_link_to "Edit", edit_admin_hackathon_path(@hackathon), active: :exclusive, class_active: 'is-active' %></li>
+  </ul>
+<% end %>

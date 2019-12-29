@@ -1,0 +1,16 @@
+<h1 class="title">Manage Hackathons</h1>
+<%= link_to "New Hackathon", new_admin_hackathon_path, class: 'button is-success' %>
+<div class="columns is-multiline">
+    <% @hackathons.each do |hackathon| %>
+      <div class="column is-one-third">
+        <div class="box">
+          <h1 class="title"><%= hackathon.name %></h1>
+          <h2 class="subtitle"><%= hackathon.description %></h2>
+          <%= link_to "View", admin_hackathon_path(hackathon), class: 'button is-primary' %>
+          <%= link_to "Edit", edit_admin_hackathon_path(hackathon), class: 'button is-primary' %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<%= paginate @hackathons %>
