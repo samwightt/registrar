@@ -1,12 +1,3 @@
-<section class="hero is-medium is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">New Hackathon</h1>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
     <%= form_with model: [:admin, @hackathon], id: 'new-hackathon-form' do |f| %>
       <div class="field is-horizontal">
         <div class="field-body">
@@ -52,5 +43,3 @@
         <%= f.submit "Create hackathon", class: "button is-success" %>
       </div>
     <% end %>
-  </div>
-</section>

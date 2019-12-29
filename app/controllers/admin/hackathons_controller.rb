@@ -22,6 +22,10 @@ class Admin::HackathonsController < ApplicationController
     end
   end
 
+  def show
+    @hackathon = Hackathon.find(params[:id])
+  end
+
   def edit
   end
 

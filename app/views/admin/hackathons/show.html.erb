@@ -1,0 +1,12 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><%= link_to "Hackathons", admin_hackathons_path %></li>
+    <li class="is-active"><a href="#" aria-current="page"><%= @hackathon.name %></a></li>
+  </ul>
+</nav>
+<h1 class="title"><%= @hackathon.name %></h1>
+<h2 class="subtitle"><%= @hackathon.description %></h2>
+
+<% content_for :hackathon_submenu do %>
+  <%= active_link_to @hackathon.name, admin_hackathon_path(@hackathon), active: :exclusive, class_active: 'is-active' %>
+<% end %>
