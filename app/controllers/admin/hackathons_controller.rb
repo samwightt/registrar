@@ -1,7 +1,9 @@
 class Admin::HackathonsController < ApplicationController
   before_action :authenticate_user!
+  layout "admin"
 
   def index
+    @hackathons = Hackathon.page(params[:page]).per(20)
   end
 
   def new

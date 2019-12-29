@@ -42,6 +42,11 @@
     <div class="container">
       <%= render "layouts/flash_handler" %>
     </div>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    <footer class="footer">
+      <div class="content">
+        Registrar by <a href="https://samw.dev">Sam Wight</a>. This source code is licensed under the Apache License 2.0.
+      </div>
+    </footer>
   </body>
 </html>

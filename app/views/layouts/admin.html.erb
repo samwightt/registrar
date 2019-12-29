@@ -1,0 +1,30 @@
+<% content_for :content do %>
+  <section class="hero is-medium is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Admin</h1>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container is-fluid">
+      <div class="columns">
+      <div class="column is-one-fifth">
+        <aside class="menu">
+          <p class="menu-label">General</p>
+          <ul class="menu-list">
+            <li><%= active_link_to "Home", admin_root_path, active: :exclusive, class_active: 'is-active' %></li>
+          </ul>
+          <p class="menu-label">Management</p>
+          <ul class="menu-list">
+            <li><%= active_link_to "Hackathons", admin_hackathons_path, active: :exclusive, class_active: 'is-active' %></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-four-fifths">
+        <%= yield %>
+      </div>
+    </div>
+  </section>
+<% end %>
+<%= render template: 'layouts/application' %>

@@ -5,50 +5,52 @@
     </div>
   </div>
 </section>
-<div class="container">
-  <%= form_with model: [:admin, @hackathon], id: 'new-hackathon-form' do |f| %>
-    <div class="field is-horizontal">
-      <div class="field-body">
-        <div class="field">
-          <%= f.label :name, class: "label" %>
-          <div class="control">
-            <%= f.text_field :name, class: "input", placeholder: "e.g. My Cool Hackathon" %>
+<section class="section">
+  <div class="container">
+    <%= form_with model: [:admin, @hackathon], id: 'new-hackathon-form' do |f| %>
+      <div class="field is-horizontal">
+        <div class="field-body">
+          <div class="field">
+            <%= f.label :name, class: "label" %>
+            <div class="control">
+              <%= f.text_field :name, class: "input", placeholder: "e.g. My Cool Hackathon" %>
+            </div>
+            <p class="help">The name of your hackathon. Users will see this in the UI.</p>
           </div>
-          <p class="help">The name of your hackathon. Users will see this in the UI.</p>
-        </div>
 
-        <div class="field">
-          <%= f.label :description, class: "label" %>
-          <div class="control">
-            <%= f.text_area :description, class: "textarea", placeholder: "e.g. My cool hackathon will be held at this date and this time. Come for a ton of fun!", rows: "3" %>
+          <div class="field">
+            <%= f.label :description, class: "label" %>
+            <div class="control">
+              <%= f.text_area :description, class: "textarea", placeholder: "e.g. My cool hackathon will be held at this date and this time. Come for a ton of fun!", rows: "3" %>
+            </div>
+            <p class="help">A short description of your hackathon. It's a good idea to put location and any other details in here.</p>
           </div>
-          <p class="help">A short description of your hackathon. It's a good idea to put location and any other details in here.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="field is-horizontal">
-      <div class="field-body">
-        <div class="field">
-          <%= f.label :start_date, class: "label" %>
-          <div class="control">
-            <%= f.date_field :start_date, class: "input", placeholder: "e.g. janesmith@example.com" %>
-          </div>
-          <p class="help">The day your hackathon will start.</p>
-        </div>
-
-        <div class="field">
-          <%= f.label :end_date, class: "label" %>
-          <div class="control">
-            <%= f.date_field :end_date, class: "input", placeholder: "e.g. janesmith@example.com" %>
-          </div>
-          <p class="help">The day your hackathon will end.</p>
         </div>
       </div>
-    </div>
 
-    <div class="control">
-      <%= f.submit "Create hackathon", class: "button is-success" %>
-    </div>
-  <% end %>
-</div>
+      <div class="field is-horizontal">
+        <div class="field-body">
+          <div class="field">
+            <%= f.label :start_date, class: "label" %>
+            <div class="control">
+              <%= f.date_field :start_date, class: "input", placeholder: "e.g. janesmith@example.com" %>
+            </div>
+            <p class="help">The day your hackathon will start.</p>
+          </div>
+
+          <div class="field">
+            <%= f.label :end_date, class: "label" %>
+            <div class="control">
+              <%= f.date_field :end_date, class: "input", placeholder: "e.g. janesmith@example.com" %>
+            </div>
+            <p class="help">The day your hackathon will end.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <%= f.submit "Create hackathon", class: "button is-success" %>
+      </div>
+    <% end %>
+  </div>
+</section>

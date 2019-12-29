@@ -1,0 +1,23 @@
+<h1 class="title">Manage Hackathons</h1>
+<div class="columns is-multiline">
+    <% @hackathons.each do |hackathon| %>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= hackathon.name %>
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content"><%= hackathon.description %></div>
+          </div>
+          <div class="card-footer">
+            <%= link_to "View", admin_hackathon_path(hackathon), class: 'card-footer-item' %>
+            <%= link_to "Edit", edit_admin_hackathon_path(hackathon), class: 'card-footer-item' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<%= paginate @hackathons %>
