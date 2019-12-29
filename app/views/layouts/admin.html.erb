@@ -17,14 +17,14 @@
             </ul>
             <p class="menu-label">Management</p>
             <ul class="menu-list">
-              <li><%= active_link_to "Hackathons", admin_hackathons_path, active: :exclusive, class_active: 'is-active' %>
+              <li><%= link_to "Hackathons", admin_hackathons_path, active: :exclusive, class_active: 'is-active' %>
                 <% if parent_nav_active?(admin_hackathons_path) %>
                   <ul>
-                    <li><%= active_link_to "Create New", new_admin_hackathon_path, active: :exclusive, class_active: 'is-active' %>
-                    </li>
+                    <li><%= active_link_to "View All", admin_hackathons_path, active: :exclusive, class_active: 'is-active' %></li>
                     <% if content_for?(:hackathon_submenu) %>
                       <%= content_for(:hackathon_submenu) %>
                     <% end %>
+                    <li><%= active_link_to "Create New", new_admin_hackathon_path, active: :exclusive, class_active: 'is-active' %></li>
                   </ul>
                 <% end %>
               </li>

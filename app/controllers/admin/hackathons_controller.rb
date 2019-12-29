@@ -27,12 +27,19 @@ class Admin::HackathonsController < ApplicationController
   end
 
   def edit
+    @hackathon = Hackathon.find(params[:id])
   end
 
   def update
-  end
+    @hackathon = Hackathon.find(params[:id])
 
-  def destroy
+    respond_to do |format|
+      if @hackathon.update(new_params)
+        format.html { redirect_to [:admin, @hackathon ] }
+      else
+        format.js
+      end
+    end
   end
 
   private
