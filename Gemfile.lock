@@ -37,9 +37,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_link_to (1.0.5)
-      actionpack
-      addressable
     activejob (6.0.2.1)
       activesupport (= 6.0.2.1)
       globalid (>= 0.3.6)
@@ -61,9 +58,6 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    annotate (3.0.3)
-      activerecord (>= 3.2, < 7.0)
-      rake (>= 10.4, < 14.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -95,18 +89,6 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
-    kaminari (1.1.1)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.1.1)
-      kaminari-activerecord (= 1.1.1)
-      kaminari-core (= 1.1.1)
-    kaminari-actionview (1.1.1)
-      actionview
-      kaminari-core (= 1.1.1)
-    kaminari-activerecord (1.1.1)
-      activerecord
-      kaminari-core (= 1.1.1)
-    kaminari-core (1.1.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -128,12 +110,9 @@ GEM
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pg (1.1.4)
     public_suffix (4.0.2)
     puma (4.3.1)
       nio4r (~> 2.0)
-    pundit (2.0.1)
-      activesupport (>= 3.0.0)
     rack (2.0.8)
     rack-proxy (0.6.5)
       rack
@@ -234,18 +213,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_link_to
-  annotate
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
-  kaminari
   listen (>= 3.0.5, < 3.2)
-  pg (~> 1.1.4)
   puma (~> 4.1)
-  pundit
   rails (~> 6.0.1)
   sass-rails (>= 6)
   selenium-webdriver
