@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  enum role: [:member, :admin]
+
+  def first_name
+    self.name.split(" ")[0]
+  end
 end
