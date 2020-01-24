@@ -1,8 +1,0 @@
-<% if !flash.empty? %>
-  <% flash.each do |key, value| %>
-    <div class="notification <%= key == "alert" ? "is-danger" : "is-success" %>" data-controller="flash" data-target="flash.notification">
-      <button class="delete" data-action="flash#delete"></button>
-      <%= value %>
-    </div>
-  <% end %>
-<% end %>
